@@ -1,9 +1,10 @@
-# Read-Plot3d-Grid-and-Flow-File-in-Python
-Plot3d形式の格子ファイルと流れ場ファイルをPythonで読み込むためのプログラムです。
-
-## 使用方法
-### 実行方法
-```Python
+#!/opt/anaconda3/bin/python
+# ======================================================================
+# fortranのunformatted形式のPLOT3Dファイルの格子(grid)と流れ場(flow)を読み込む
+# (ただし,シングルグリッド,IBLANKなしにのみ対応)
+#
+# Created on 2024/03/19, author: L3onSW
+# ======================================================================
 import read_plot3d
 
 real_precision = "single"  # 実数の型: 単精度なら"single" or 倍精度なら"double"
@@ -31,18 +32,3 @@ print(flow.shape)  # 流れ場ファイルのサイズ(jmax, kmax, lmax, 5)
 
 print(parameter.items())  # 辞書parameterのキーと値のペアを表示
 print(parameter["Mach number"])  # 辞書parameterの中でキー"Mach number"に対応する値を表示
-```
-### 実行結果
-```Console
-L3on@MacBook:Read-Plot3d-Grid-and-Flow-File-in-Python$ python example.py 
-dict_items([('record marker type', '<i'), ('int type', '<i'), ('int byte length', 4), ('real type', '<f'), ('real byte length', 4)])
-<i
-(119, 101, 71, 3)
-(119, 101, 71, 5)
-dict_items([('Mach number', array([0.2], dtype=float32)), ('angle of attack', array([37.], dtype=float32)), ('Reynolds number', array([6500000.], dtype=float32)), ('iterations', array([0], dtype=int32))])
-[0.2]
-```
-
-## 参考文献
-1. ["Plot3d File Format for Grid and Solution Files". NPARC Alliance CFD Verification and Validation Web Site. (参照: 2024-03-19).](https://www.grc.nasa.gov/www/wind/valid/plot3d.html)
-2. ["numpy.fromfile". NumPy v1.26 Manual. (参照: 2024-03-19).](https://numpy.org/doc/stable/reference/generated/numpy.fromfile.html)
