@@ -10,7 +10,7 @@ import read_plot3d
 
 real_precision = "single"  # 実数の型: 単精度なら"single" or 倍精度なら"double"
 record_marker_byte = 4  # レコードマーカのバイトサイズ: 4 or 8
-endian = "little"  # バイトオーダー: "little" or "big"
+endian = "little"  # バイトオーダ: "little" or "big"
 
 grid_file = "./sample_plot3d.grid"  # 格子ファイル
 flow_file = "./sample_plot3d.flow"  # 流れ場ファイル

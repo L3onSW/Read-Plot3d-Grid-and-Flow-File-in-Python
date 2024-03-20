@@ -21,7 +21,7 @@ def format_setting(real_precision, record_marker_byte, endian):
         record_marker_byte (int):
             レコードマーカのバイトサイズ(4 or 8)
         endian (str):
-            バイトオーダー(リトルエンディアンなら"little", ビッグエンディアンなら"big")
+            バイトオーダ(リトルエンディアンなら"little", ビッグエンディアンなら"big")
 
     Returns:
         format (dict):
